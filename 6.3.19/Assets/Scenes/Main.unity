@@ -4559,7 +4559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilemapCo: {fileID: 1507418300}
   CollCo: {fileID: 965755699}
-  co: 0.4800005
+  co: 0.3800005
   currentco: 1
   timeChange: 0.2
   toNight: 1
