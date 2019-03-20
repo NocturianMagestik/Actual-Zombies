@@ -37,18 +37,7 @@ public class Enemy : MonoBehaviour
         CheckDistance();
         
     }   
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("AttackHB"))
-        {
-            damagedlt = collision.GetComponentInParent<Attack>().damage;
-            health -= damagedlt;
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
+    
 
     private void Move()
     {

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
 
 
+
     Vector3 movement;
     Vector3 aim;
     Vector2 cross;
@@ -43,8 +44,8 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(Input.GetAxisRaw("Horizontal") * 2, Input.GetAxisRaw("Vertical") * 2, 0f);
         Vector3 mouseMovement = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0f);
         aim = aim + mouseMovement;
-        aim.x = Mathf.Clamp(aim.x, minaim.x, maxaim.x);
-        aim.y = Mathf.Clamp(aim.y, minaim.x, maxaim.y);
+        aim.x = Mathf.Clamp(aim.x, transform.position.x - 2, transform.position.x + 2);
+        aim.y = Mathf.Clamp(aim.y, transform.position.y - 2, transform.position.y + 2);
 
 
     }

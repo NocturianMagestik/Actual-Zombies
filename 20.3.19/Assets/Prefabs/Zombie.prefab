@@ -109,8 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2344448848826070791}
   ChaseRadius: 3
-  AttackRadius: 0.3
+  AttackRadius: 1
   animator: {fileID: 2344448848826070788}
+  canAttack: 1
   health: 5
   dodamage: 2
   Moving: 0
