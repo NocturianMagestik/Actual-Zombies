@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     private float moveSpeed = 1f;
     public Rigidbody2D rb;
-
+    public float playerKnockback;
     public float ChaseRadius;
     public float AttackRadius;
     public Animator animator;
@@ -80,12 +80,15 @@ public class Enemy : MonoBehaviour
         Debug.Log("time waited");
         gameObject.GetComponent<SpriteRenderer>().color = new Color(0.1019608f, 0.8588235f, 0.1019608f);
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
-        if (Vector3.Distance(target.transform.position, transform.position) <= AttackRadius)
+        if (Vector3.Distance(target.transform.position, transform.position) <= AttackRadius && canAttack == true)
         {
             target.GetComponent<PlayerHealth>().health -= dodamage;
             Debug.Log("Damage dealt");
+            Vector2 difference = transform.position - target.transform.position;
+            difference = difference.normalized * playerKnockback;
+            target.GetComponent<Rigidbody2D>().AddForce(difference, ForceMode2D.Impulse);
+            canAttack = false;
         }
-        canAttack = false;
         StartCoroutine(waitForReset());
     }
 
@@ -93,6 +96,7 @@ public class Enemy : MonoBehaviour
     {
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
         yield return new WaitForSecondsRealtime(1f);
+        target.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
         canAttack = true;    
     }
 

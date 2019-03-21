@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateHearts();
         if (health <= 0)
         {
             Debug.Log("DED");
@@ -31,8 +32,31 @@ public class PlayerHealth : MonoBehaviour
             Application.Quit();
             
         }
-    } 
-    
+    }
+
+    void UpdateHearts()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i <= health - 1)
+            {
+                hearts[i].sprite = FullHeart;
+
+            }
+            else if (i >= health)
+            {
+
+                hearts[i].sprite = ZeroHeart;
+            }
+            else
+            {
+                hearts[i].sprite = HalfHeart;
+            }
+        }
+
+
+    }
+
     void Initialise()
     {
         for (int i = 0; i < hearts.Length; i++)
