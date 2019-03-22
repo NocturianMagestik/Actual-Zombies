@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24dff405d19fc6b43be73ab00026e090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetWidth: -350
-  targetHeight: -300
+  targetWidth: 2
+  targetHeight: 2
 --- !u!1001 &113966495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,6 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 223082470}
+  - component: {fileID: 223082471}
   m_Layer: 0
   m_Name: HeartHolder
   m_TagString: Untagged
@@ -644,6 +645,20 @@ Transform:
   m_Father: {fileID: 1554856311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223082471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223082469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24dff405d19fc6b43be73ab00026e090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWidth: 200
+  targetHeight: 200
 --- !u!1001 &224988927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15019,7 +15034,6 @@ GameObject:
   - component: {fileID: 1554856310}
   - component: {fileID: 1554856309}
   - component: {fileID: 1554856308}
-  - component: {fileID: 1554856312}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -15108,20 +15122,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1554856312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554856307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24dff405d19fc6b43be73ab00026e090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetWidth: 0
-  targetHeight: 0
 --- !u!1 &1570621635
 GameObject:
   m_ObjectHideFlags: 0

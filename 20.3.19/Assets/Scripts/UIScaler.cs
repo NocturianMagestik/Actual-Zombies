@@ -12,7 +12,7 @@ public class UIScaler : MonoBehaviour
     void Start()
     {
         RectTransform rt = (RectTransform)gameObject.transform;
-        centre = new Vector2(Screen.width - rt.rect.width, Screen.height - rt.rect.height);
+        centre = new Vector2(Screen.width / targetWidth, Screen.height / targetHeight);
         
         transform.position = centre;
     }
