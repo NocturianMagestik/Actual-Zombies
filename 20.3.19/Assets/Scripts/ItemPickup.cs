@@ -10,12 +10,14 @@ public class ItemPickup : MonoBehaviour
     // Start is called before the first frame update
     
     // Update is called once per frame
-    void PickUp()
+    public void PickUp()
     {
+
         Debug.Log("Picking up " + item.name);
         bool wasPickedUp = Inventory.instance.Add(item);
         if (wasPickedUp == true)
         {
+            item.hasBeenPicked = true;
             Destroy(gameObject);
         }
     }

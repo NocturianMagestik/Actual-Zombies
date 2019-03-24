@@ -8,6 +8,8 @@ public class InventoryUI : MonoBehaviour
     public Transform itemsParent;
     public GameObject inventoryUI;
     InventorySlot[] slots;
+    public Rigidbody2D player;
+    public bool isOpen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,19 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory"))
         {
+            player.velocity = new Vector2(0f, 0f);
+            isOpen = !isOpen;
+            if (isOpen)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
     }

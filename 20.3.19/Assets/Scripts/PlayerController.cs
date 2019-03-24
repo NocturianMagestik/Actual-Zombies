@@ -20,10 +20,10 @@ public class PlayerController : MonoBehaviour
 
 
 
-    void Awake()
+    void Start()
     {
-        /*Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;*/
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         
     }
     // Update is called once per frame

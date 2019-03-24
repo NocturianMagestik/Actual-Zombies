@@ -15,10 +15,7 @@ public class Attack : MonoBehaviour
         knocked = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,8 +28,18 @@ public class Attack : MonoBehaviour
                 Vector2 difference = enemy.transform.position - transform.position;
                 difference = difference.normalized * knockback;
                 knocked = true;
+                enemy.gameObject.GetComponent<Enemy>().health -= damage;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
                 StartCoroutine(KnockBk(enemy));
+            }
+        }
+        else if (collision.gameObject.GetComponent<ItemPickup>() != null)
+        {
+            ItemPickup item = collision.gameObject.GetComponent<ItemPickup>();
+            if (!item.item.hasBeenPicked)
+            {
+                item.PickUp();
+
             }
         }
     }

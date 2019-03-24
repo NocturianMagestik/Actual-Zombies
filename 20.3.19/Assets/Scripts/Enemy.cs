@@ -34,6 +34,10 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
         CheckDistance();
         
     }   
