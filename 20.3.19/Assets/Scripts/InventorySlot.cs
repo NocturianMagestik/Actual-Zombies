@@ -28,11 +28,17 @@ public class InventorySlot : MonoBehaviour
     {
         Inventory.instance.Remove(item);
     }
+
     public void UseItem()
     {
         if (item != null)
         {
             item.Use();
+        }
+        else
+        {
+            Debug.Log("Item not found");
+            return;
         }
     }
 }

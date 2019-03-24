@@ -20,6 +20,7 @@ public class Item : ScriptableObject
     {
         // Use the item
         // Something may happen
+        Debug.Log("using item");
         RemoveFromInventory();
     }
 
