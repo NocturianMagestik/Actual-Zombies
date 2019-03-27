@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Health Potion 1
   icon: {fileID: 21300126, guid: 28444780bf7bc4a43817583f07b532f7, type: 3}
   showInInventory: 1
-  hasBeenPicked: 0
+  hasBeenPicked: 1
   healAmount: 2
