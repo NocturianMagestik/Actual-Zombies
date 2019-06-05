@@ -22,7 +22,6 @@ public class Chest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("pressed");
             pressed = true;
         }
 
@@ -32,10 +31,8 @@ public class Chest : MonoBehaviour
 
         if (collsion.CompareTag("Player"))
         {
-            Debug.Log("in");
             if (pressed == true && isopened == false)
             {
-                Debug.Log("Opened");
                 animator.SetBool("isopen", true);
                 isopened = true;
                 SpawnItem();
@@ -49,7 +46,6 @@ public class Chest : MonoBehaviour
 
         if (collsion.CompareTag("Player"))
         {
-            Debug.Log("out");
             if (pressed == true && isopened == false)
             {
                 Debug.Log("Opened");
@@ -66,22 +62,22 @@ public class Chest : MonoBehaviour
         int rnd = Random.Range(1, 11);
         if (rnd == 1)
         {
-            Instantiate(HeartModule, transform.position + distance, Quaternion.identity);
+            Instantiate(HeartModule, transform.position - distance, Quaternion.identity);
         }
         if (rnd > 1 && rnd < 6)
         {
-            Instantiate(Coin, transform.position + distance, Quaternion.identity);
+            Instantiate(Coin, transform.position - distance, Quaternion.identity);
         }
         if (rnd >= 6)
         {
             int rnd_w = Random.Range(1, 2);
             if (rnd_w == 1)
             {
-                Instantiate(Axe, transform.position + distance, Quaternion.identity);
+                Instantiate(Axe, transform.position - distance, Quaternion.identity);
             }
             if (rnd_w == 2)
             {
-                Instantiate(Spear, transform.position + distance, Quaternion.identity);
+                Instantiate(Spear, transform.position - distance, Quaternion.identity);
             }
         }
 
